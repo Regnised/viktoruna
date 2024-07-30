@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import Header from "./components/Header";
+import QuizList from "./components/Quiz-list";
 
 /*eslint-disable*/
 function parseJwt(token) {
@@ -31,8 +32,7 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <h1>Hello World</h1>
-      <p>See console log for Amazon Cognito user tokens.</p>
+      <QuizList />
     </div>
   );
 };
