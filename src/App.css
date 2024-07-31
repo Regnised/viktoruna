@@ -2,11 +2,15 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .loginForm {
-  min-width: 18em
+  margin: 10rem 10rem;
+  min-width: 10em;
+  width: 20rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .smallButton {

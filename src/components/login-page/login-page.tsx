@@ -1,9 +1,8 @@
-// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: Apache-2.0
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signIn, signUp } from './authService';
+import { signIn, signUp } from '../../authService';
+
+import './login-page.css';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -39,7 +38,7 @@ const LoginPage = () => {
       alert('Passwords do not match');
       return;
     }
-    try { 
+    try {
       await signUp(username, email, password);
       navigate('/confirm', { state: { email, username } });
     } catch (error) {
@@ -48,22 +47,22 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="loginForm">
+    <div className="loginForm mx-auto">
       <h1>Welcome</h1>
       <h4>{isSignUp ? 'Sign up to create an account' : 'Sign in to your account'}</h4>
       <form onSubmit={isSignUp ? handleSignUp : handleSignIn}>
-      {isSignUp && (
-        <div>
-          <input
-            className="inputText"
-            id="username"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
-            required
-          />
-        </div>
+        {isSignUp && (
+          <div>
+            <input
+              className="inputText"
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+              required
+            />
+          </div>
         )}
         <div>
           <input

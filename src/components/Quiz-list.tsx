@@ -1,11 +1,22 @@
-const QuizList = () => {
+import QuizListItem from "./quiz-list-item";
+
+import './quiz-list.css';
+
+const QuizList = ({ quizData }) => {
+    const items = quizData.map((item, index) => {
+        const { id, ...itemProps } = item;
+        return (
+            <li key={id} className="list-group-item">
+                <QuizListItem {...itemProps} />
+            </li>
+        )
+    })
+
     return (
 
-            <ul>
-                <li>Quiz 1</li>
-                <li>Quiz 2</li>
-                <li>Quiz 3</li>
-            </ul>
+        <ul className="list-group quiz-list">
+            {items}
+        </ul>
 
     )
 }
